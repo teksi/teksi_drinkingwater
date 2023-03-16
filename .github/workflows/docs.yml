@@ -9,6 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: docs
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -19,15 +23,15 @@ jobs:
           pip install -r requirements.txt
           sudo apt-get install -y gettext
           # Go
-          curl -OL https://github.com/transifex/cli/releases/download/v1.3.1/tx-linux-amd64.tar.gz
+          curl -OL https://github.com/transifex/cli/releases/download/v1.6.5/tx-linux-amd64.tar.gz
           tar -xvzf tx-linux-amd64.tar.gz
 
       - name: Pull then push translation strings
         env:
           tx_token: ${{ secrets.TX_TOKEN }}
         run: |
-          TX_TOKEN=$tx_token PROBE=$probe make transifex_pull
-          TX_TOKEN=$tx_token PROBE=$probe make transifex_push
+          TX_TOKEN=$tx_token make transifex_pull
+          TX_TOKEN=$tx_token make transifex_push
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
@@ -42,4 +46,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
-          folder: build/html
+          folder: docs/build/html
