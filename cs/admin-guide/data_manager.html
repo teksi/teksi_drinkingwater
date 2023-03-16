@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="cs" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.1. Správce dat &mdash; Dokumentace pro QWAT 1.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="4.2. Spouštěče" href="triggers.html" />
+    <link rel="prev" title="4. Průvodce správce" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            QWAT
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../features-guide/index.html">1. QWAT / TEKSI modul pitné vody</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-guide/index.html">2. Instalační příručka QWAT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">3. Uživatelská příručka QWAT</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">4. Průvodce správce</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1. Správce dat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#import-data-to-qwat">4.1.1. Import dat do QWAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import-data-from-topobase">4.1.2. Import dat z Topobase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#export-data-to-interlis-sia-405-format">4.1.3. Export dat do formátu INTERLIS SIA 405</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#usage">4.1.3.1. Použití</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#limitations">4.1.3.2. Omezení</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#export-data-to-sire">4.1.4. Exportovat data do SIRE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backup-data">4.1.5. Záloha dat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restoring-data">4.1.6. Obnovení dat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qwat-analysis-tools">4.1.7. Nástroje pro analýzu QWAT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="triggers.html">4.2. Spouštěče</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guide/index.html">5. Příručka přispěvatele</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guide/index.html">6. Příručka pro vývojáře</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo-guide/index.html">7. Ukázková data a projekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">8. Časté otázky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/index.html">9. Slovník</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../translation/index.html">10. Překlad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QWAT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">4. </span>Průvodce správce</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.1. </span>Správce dat</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/admin-guide/data_manager.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="data-manager">
+<h1><span class="section-number">4.1. </span>Správce dat<a class="headerlink" href="#data-manager" title="Permalink to this heading"></a></h1>
+<section id="import-data-to-qwat">
+<h2><span class="section-number">4.1.1. </span>Import dat do QWAT<a class="headerlink" href="#import-data-to-qwat" title="Permalink to this heading"></a></h2>
+<p>Obecně je výhodné načítat data QWAT přes pohledy a ne tabulky, vzhledem ke složitosti objektového modelu a obchodní inteligenci umístěné ve spouštěcích prvcích úprav. (např. zpracování uzlů a topologií).</p>
+<p>[Pěknou technickou alternativu](<a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:nliaudat/qwat-import-sample.git) navrhuje Nicolas Liaudat, který používá přímo QGIS a výrazy k načtení datových sad. Pokud zjistíte vylepšení problémů, přispějte k tomu.</p>
+</section>
+<section id="import-data-from-topobase">
+<h2><span class="section-number">4.1.2. </span>Import dat z Topobase<a class="headerlink" href="#import-data-from-topobase" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>popište proces a nástroje</p></li>
+<li><p>popište automatizované a manuální kontroly</p></li>
+<li><p>uveďte konkrétní bod pozornosti</p></li>
+</ul>
+</section>
+<section id="export-data-to-interlis-sia-405-format">
+<h2><span class="section-number">4.1.3. </span>Export dat do formátu INTERLIS SIA 405<a class="headerlink" href="#export-data-to-interlis-sia-405-format" title="Permalink to this heading"></a></h2>
+<p>Export databáze QWAT do výměnného formátu Interlis (.xtf) je možný pomocí specializovaného nástroje <a class="reference external" href="https://github.com/QGEP/qgepqwat2ili">qgepqwat2ili</a> vyvinutého v rámci projektu NGDI.</p>
+<section id="usage">
+<h3><span class="section-number">4.1.3.1. </span>Použití<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h3>
+<p>Qgepqwat2ili vyžaduje Javu (JRE 1.6 nebo vyšší) a Python (3.6 nebo vyšší).</p>
+<p>Pak ji lze nainstalovat jako jakoukoli jinou knihovnu Pythonu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">qgepqwat2ili</span>
+</pre></div>
+</div>
+<p>Jednoduchý export se provádí takto (za předpokladu, že máte definovanou službu pgservice s názvem <cite>qwat</cite>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">qgepqwat2ili</span> <span class="n">qwat</span> <span class="n">export</span> <span class="n">desktop</span><span class="o">/</span><span class="n">my_export</span><span class="o">.</span><span class="n">xtf</span>
+</pre></div>
+</div>
+<p>Plné využití:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">qgepqwat2ili</span> <span class="n">qwat</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">recreate_schema</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">skip_validation</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">pgservice</span> <span class="n">PGSERVICE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">log</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">include_hydraulics</span><span class="p">]</span> <span class="n">export</span> <span class="n">path</span>
+
+<span class="n">positional</span> <span class="n">arguments</span><span class="p">:</span>
+<span class="p">{</span><span class="n">import</span><span class="p">,</span><span class="n">export</span><span class="p">}</span>       <span class="kn">import</span> <span class="nn">is</span> <span class="n">currently</span> <span class="ow">not</span> <span class="n">supported</span>
+<span class="n">path</span>                  <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">input</span><span class="o">/</span><span class="n">output</span> <span class="o">.</span><span class="n">xtf</span> <span class="n">file</span>
+
+<span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
+<span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+<span class="o">--</span><span class="n">recreate_schema</span>     <span class="n">drops</span> <span class="n">schema</span> <span class="ow">and</span> <span class="n">reruns</span> <span class="n">ili2pg</span> <span class="n">importschema</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+<span class="o">--</span><span class="n">skip_validation</span>     <span class="n">skips</span> <span class="n">running</span> <span class="n">ilivalidator</span> <span class="n">on</span> <span class="nb">input</span><span class="o">/</span><span class="n">output</span> <span class="n">xtf</span> <span class="p">(</span><span class="n">required</span> <span class="n">to</span> <span class="kn">import</span> <span class="nn">invalid</span> <span class="n">files</span><span class="p">,</span> <span class="n">invalid</span> <span class="n">outputs</span> <span class="n">are</span> <span class="n">still</span> <span class="n">generated</span><span class="p">)</span>
+                        <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+<span class="o">--</span><span class="n">include_hydraulics</span>  <span class="k">if</span> <span class="n">provided</span><span class="p">,</span> <span class="n">exports</span> <span class="n">will</span> <span class="n">include</span> <span class="n">hydraulischer_strang</span> <span class="ow">and</span> <span class="n">hydraulischer_node</span> <span class="n">classes</span> <span class="p">(</span><span class="n">these</span> <span class="n">are</span> <span class="n">currently</span> <span class="n">likely</span> <span class="n">to</span> <span class="n">make</span> <span class="n">the</span> <span class="n">export</span> <span class="n">invalid</span> <span class="n">due</span> <span class="n">to</span> <span class="n">issues</span> <span class="k">with</span> <span class="n">the</span> <span class="n">current</span> <span class="n">ili</span> <span class="n">model</span><span class="p">)</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+<span class="o">--</span><span class="n">pgservice</span> <span class="n">PGSERVICE</span>
+                        <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">pgservice</span> <span class="n">to</span> <span class="n">use</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span> <span class="n">the</span> <span class="n">database</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">qwat</span><span class="p">)</span>
+<span class="o">--</span><span class="n">log</span>                 <span class="n">saves</span> <span class="n">a</span> <span class="n">log</span> <span class="n">file</span> <span class="nb">next</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">input</span><span class="o">/</span><span class="n">output</span> <span class="n">file</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Další dokumentaci a sledování problémů naleznete v repozitáři <a class="reference external" href="https://github.com/QGEP/qgepqwat2ili">qgepqwat2ili</a>.</p>
+</section>
+<section id="limitations">
+<h3><span class="section-number">4.1.3.2. </span>Omezení<a class="headerlink" href="#limitations" title="Permalink to this heading"></a></h3>
+<p>Nástroj je v současné době experimentální. Upozorňujeme na následující omezení:</p>
+<ul class="simple">
+<li><p>Nástroj zatím nebyl příliš testován na skutečných datech.</p></li>
+<li><p>Datový model QWAT a datový model SIA 405 mají některé důležité rozdíly. Proto nelze všechny třídy nebo vlastnosti přesně přiřadit.</p></li>
+<li><p>Ve výchozím nastavení nástroj neexportuje hydraulické třídy. Je třeba výslovně přidat volbu, která to umožní, ale výsledkem budou neplatné soubory kvůli výše uvedeným rozdílům.</p></li>
+<li><p>Nástroj je v současné době k dispozici pouze jako nástroj příkazového řádku. V určitém okamžiku bude začleněn do zásuvného modulu QWAT, podobně jako tomu bylo u QGEP.</p></li>
+<li><p>Nástroj v současné době podporuje pouze export. Plánuje se podpora importu, ale to vyžaduje větší změny, aby se datový model QWAT přiblížil normě SIA405.</p></li>
+</ul>
+<p>Před distribucí souborů pečlivě zkontrolujte výsledná data a ujistěte se, že jste získali očekávané výsledky. Rovněž prosím nahlaste všechny chyby nebo nesrovnalosti, které se vám objevují, na <a class="reference external" href="https://github.com/QGEP/qgepqwat2ili/issues">qgepqwat2ili issue tracker</a>, abyste pomohli nástroj vylepšit.</p>
+</section>
+</section>
+<section id="export-data-to-sire">
+<h2><span class="section-number">4.1.4. </span>Exportovat data do SIRE<a class="headerlink" href="#export-data-to-sire" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>popište proces a nástroje</p></li>
+<li><p>popište automatizované a manuální kontroly</p></li>
+<li><p>uveďte konkrétní bod pozornosti</p></li>
+</ul>
+</section>
+<section id="backup-data">
+<h2><span class="section-number">4.1.5. </span>Záloha dat<a class="headerlink" href="#backup-data" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Použít zálohy PostgreSQL</p></li>
+<li><p>body pozornosti (verze PG…)</p></li>
+</ul>
+</section>
+<section id="restoring-data">
+<h2><span class="section-number">4.1.6. </span>Obnovení dat<a class="headerlink" href="#restoring-data" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Použít zálohy PostgreSQL</p></li>
+<li><p>body pozornosti</p></li>
+</ul>
+</section>
+<section id="qwat-analysis-tools">
+<h2><span class="section-number">4.1.7. </span>Nástroje pro analýzu QWAT<a class="headerlink" href="#qwat-analysis-tools" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Kde najít skripty pro analýzu dat</p></li>
+<li><p>Jak je používat</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="4. Průvodce správce" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="triggers.html" class="btn btn-neutral float-right" title="4.2. Spouštěče" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018, QWAT team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="cs" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2.1. Nastavení databázového serveru &mdash; Dokumentace pro QWAT 1.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="2.2. Inicializace databáze" href="database-initialization.html" />
+    <link rel="prev" title="2. Instalační příručka QWAT" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            QWAT
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../features-guide/index.html">1. QWAT / TEKSI modul pitné vody</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Instalační příručka QWAT</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.1. Nastavení databázového serveru</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#required-software">2.1.1. Požadovaný software</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#server-installation">2.1.1.1. Instalace serveru</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="database-initialization.html">2.2. Inicializace databáze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workstation.html">2.3. Nastavení pracovní stanice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">3. Uživatelská příručka QWAT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/index.html">4. Průvodce správce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guide/index.html">5. Příručka přispěvatele</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guide/index.html">6. Příručka pro vývojáře</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo-guide/index.html">7. Ukázková data a projekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">8. Časté otázky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/index.html">9. Slovník</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../translation/index.html">10. Překlad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QWAT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>Instalační příručka QWAT</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.1. </span>Nastavení databázového serveru</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/installation-guide/server.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="setup-database-server">
+<h1><span class="section-number">2.1. </span>Nastavení databázového serveru<a class="headerlink" href="#setup-database-server" title="Permalink to this heading"></a></h1>
+<p>Pokud očekáváte přístup k datům z několika různých pracovních stanic, můžete nainstalovat databázi na server přístupný v síti. Pokud pracujete pouze na jedné ploše, lze ji nainstalovat na stejný stroj.</p>
+<section id="required-software">
+<h2><span class="section-number">2.1.1. </span>Požadovaný software<a class="headerlink" href="#required-software" title="Permalink to this heading"></a></h2>
+<section id="server-installation">
+<h3><span class="section-number">2.1.1.1. </span>Instalace serveru<a class="headerlink" href="#server-installation" title="Permalink to this heading"></a></h3>
+<p>Komponenty softwaru na straně serveru jsou:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://postgresql.org/">PostgreSQL</a> (&gt;= 9.6)</p></li>
+<li><p><a class="reference external" href="https://postgis.net/">PostGIS</a>, prostorové rozšíření (&gt; 2.3)</p></li>
+<li><p><a class="reference external" href="https://www.python.org/">Python</a>, pro instalaci a aktualizaci (&gt; 3.5)</p></li>
+<li><p><a class="reference external" href="https://github.com/opengisch/pum">PUM</a> pro aktualizaci</p></li>
+</ul>
+<p>Podporované a testované verze jsou PostgreSQL 9.6 a Postgis 2.3.</p>
+<p>Přesná požadovaná konfigurace hardwaru je velmi závislá na velikosti dat. Údaje o vodní síti však obvykle nejsou obrovské objemy a minimální požadovaná konfigurace je velmi nízká.</p>
+<p>Pohodlná konfigurace by byla následující:</p>
+<ul class="simple">
+<li><p>4x Core Intel</p></li>
+<li><p>&gt;= 8GB RAM</p></li>
+<li><p>SSD úložiště (40 GB +) s funkcemi Raid pro redundanci dat</p></li>
+</ul>
+<p>Doporučujeme používat Linux jako operační systém při spuštění PostgreSQL, pro výkon a stabilitu.</p>
+<p>Aby bylo možné plně těžit z vašeho hardwaru, je třeba PostgreSQL správně nakonfigurovat. Následující aplikaci můžete použít k základní konfiguraci lepší než výchozí hodnoty: <a class="reference external" href="http://pgtune.leopard.in.ua/">http://pgtune.leopard.in.ua/</a></p>
+<p>Zvolte následující parametry:</p>
+<ul class="simple">
+<li><p>Verze DB: vaše verze databáze PostgreSQL</p></li>
+<li><p>Typ operačního systému: váš operační systém</p></li>
+<li><p>Typ DB: „Smíšený typ aplikací“</p></li>
+<li><p>Celková paměť: kolik paměti je na vašem serveru nainstalováno</p></li>
+<li><p>Počet připojení: kolik souběžných uživatelů chcete povolit (jako maximum). Volitelný parametr</p></li>
+</ul>
+<p>Aplikace by vám měla poskytnout nastavení, která se dají upravit v konfiguračním souboru <code class="docutils literal notranslate"><span class="pre">postgresql.conf</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Poznámka</p>
+<p>V prostředí jednoho počítače (žádný síťový databázový server) můžete nastavit databázi tak, aby důvěřovala místním připojení.</p>
+<p>Tímto způsobem databáze nebude vyžadovat heslo, pokud se připojujete z místní pracovní stanice, zatímco nikde není napsáno žádné heslo. Můžete dokonce dělat bez hesla databáze vůbec.</p>
+<p>To lze provést úpravou konfiguračního souboru přístupu k databázi <a class="reference external" href="http://www.postgresql.org/docs/devel/static/auth-pg-hba-conf.html">pg_hba.conf</a> a nastavit volby auth od <cite>md5`</cite> na   <code class="docutils literal notranslate"><span class="pre">trust</span></code>. K aktivaci změn je vyžadováno opětovné načtení databázové služby.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="2. Instalační příručka QWAT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="database-initialization.html" class="btn btn-neutral float-right" title="2.2. Inicializace databáze" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018, QWAT team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

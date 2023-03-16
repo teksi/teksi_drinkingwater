@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="cs" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.7. Nadmořská výška &mdash; Dokumentace pro QWAT 1.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="3.8. Prohlížeč historie" href="history.html" />
+    <link rel="prev" title="3.6. Tisk v QWAT" href="print.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            QWAT
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../features-guide/index.html">1. QWAT / TEKSI modul pitné vody</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-guide/index.html">2. Instalační příručka QWAT</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">3. Uživatelská příručka QWAT</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="qwat_struct.html">3.1. Struktura sítě pitné vody na QWAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create.html">3.2. Vytváření objektů v QWAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update.html">3.3. Základní pravidla pro aktualizaci na QWAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delete.html">3.4. Mazání objektů v QWAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="link.html">3.5. Odkazy různých objektů v QWAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="print.html">3.6. Tisk v QWAT</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.7. Nadmořská výška</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#principles">3.7.1. Zásady</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#behaviours">3.7.2. Chování</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#needed-tools">3.7.3. Potřebné nástroje</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#open-issues">3.7.4. Otevřené Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">3.7.5. Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="history.html">3.8. Prohlížeč historie</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/index.html">4. Průvodce správce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guide/index.html">5. Příručka přispěvatele</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guide/index.html">6. Příručka pro vývojáře</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo-guide/index.html">7. Ukázková data a projekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">8. Časté otázky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/index.html">9. Slovník</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../translation/index.html">10. Překlad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QWAT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">3. </span>Uživatelská příručka QWAT</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3.7. </span>Nadmořská výška</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/user-guide/elevation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="elevation">
+<h1><span class="section-number">3.7. </span>Nadmořská výška<a class="headerlink" href="#elevation" title="Permalink to this heading"></a></h1>
+<p>Správa hodnot Z ve vodní distribuční síti je důležitá a musí se s ní zacházet opatrně. Musíme se řídit konvencemi a zásadami, abychom zajistili, že zachováváme přesnost, zdroje měření a poskytujeme užitečný a snadný způsob správy výškových informací.</p>
+<p>Tato stránka podrobně popisuje, jak je sklon  řízen v projektu QWAT.</p>
+<section id="principles">
+<h2><span class="section-number">3.7.1. </span>Zásady<a class="headerlink" href="#principles" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Referenční hodnoty nadmořské výšky jsou uloženy v uzlech a bodech průzkumu. Mohly být nastaveny ručně nebo z terénních měření</p></li>
+<li><p>3D geometrie trubek se automaticky přepočítávají a hodnota Z vrcholů trubek by se neměla nastavovat ručně. 3D geometrie se přepočítává z uzlů a bodů průzkumu interpolací hodnot.</p></li>
+<li><p>Tabulky uzlů a bodů průzkumu obsahují informace o přesnosti a zdroji měření (gps, interpolace, dtm atd.). Jsou uloženy následující atributy:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>precision_plani : planimetrická přesnost</p></li>
+<li><p>precision_alt : výšková přesnost</p></li>
+<li><p>zsource: zdroj měřítka</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Bod průzkumu nemusí nutně odpovídat uzlu. Pokud bod průzkumu prostorově odpovídá vrcholu, bude tato hodnota použita také pro interpolaci 3D geometrie potrubí.</p></li>
+<li><p>Každé místo, kde je známa (změřená) nadmořská výška, má odpovídající měřicí bod nebo uzel</p></li>
+<li><p>Geometrie 3D potrubí je vždy přepočítána jako celek</p></li>
+<li><p>Výchozí výška je 0,0, protože 3D geometrie v PostGIS nepodporují nulové hodnoty pro souřadnici Z. Hodnoty sklonu 0,0 by neměly být nastavovány ručně. Místo toho použijte skutečnou hodnotu pole, která by se neměla přesně rovnat nule.</p></li>
+</ul>
+</section>
+<section id="behaviours">
+<h2><span class="section-number">3.7.2. </span>Chování<a class="headerlink" href="#behaviours" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Pokud přesuneme prvek sítě (ventil, část, hydrant …), pak se připojené geometrie potrubí přepočítají s 3D informacemi</p></li>
+<li><p>Jakákoli modifikace geometrie potrubí spustí přepočítání jeho 3D geometrie s vypočítaným interpolovaným sklonem</p></li>
+<li><p>Pokud je pro trubku vytvořen nový vrchol nebo je přesunut vrchol, hodnota nadmořské výšky pro tento vrchol bude vynulována (nastavena na 0) a bude automaticky znovu připsána</p></li>
+<li><p>Pokud chceme do potrubí vložit uzel a neznáme výšku tohoto uzlu, měli bychom vytvořit uzel, pomocí nástroje vypočítat interpolovanou hodnotu v tomto uzlu a připojit potrubí</p></li>
+</ul>
+</section>
+<section id="needed-tools">
+<h2><span class="section-number">3.7.3. </span>Potřebné nástroje<a class="headerlink" href="#needed-tools" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Nástroj pro výpočet interpolovaného sklonu pro konkrétní prvek sítě (ventil, hydrant ..). K interpolaci sklonu používá N nejbližší uzly a body průzkumu. N lze vybrat v GUI QGIS.</p></li>
+<li><p>Nástroj pro výpočet interpolovaného sklonu pro konkrétní prvky sítě směřováním na potrubí</p></li>
+<li><p>Nástroj pro výpočet interpolovaných výšek pro výběr objektů (např. Konstrukčních bodů, přes které prochází potrubí), vzhledem k sadě referenčních bodů (např. 3 průzkumné body)</p></li>
+<li><p>Nástroj k vytvoření uzlu nebo bodu průzkumu v konkrétním vrcholu potrubí, který žádá uživatele o hodnotu sklonu a přesnost, přičemž výchozí hodnotou je interpolovaná hodnota výšky vrcholu potrubí.</p></li>
+</ul>
+</section>
+<section id="open-issues">
+<h2><span class="section-number">3.7.4. </span>Otevřené Issues<a class="headerlink" href="#open-issues" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Jak vypočítat přesnost potrubí vzhledem k přesnosti uzlů? Kam ukládat tyto vypočítané informace?</p></li>
+<li><p>Při interpolaci stoupání potrubí je nějaký parametr, který chceme nastavit? Nemělo by existovat, ale kompenzace kolem potrubí, která zohledňuje body průzkumu, vypadá jako důležitý parametr.</p></li>
+</ul>
+</section>
+<section id="references">
+<h2><span class="section-number">3.7.5. </span>Reference<a class="headerlink" href="#references" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/qwat/QWAT/issues/93">https://github.com/qwat/QWAT/issues/93</a></p></li>
+<li><p><a class="reference external" href="https://github.com/qwat/qwat-data-model/issues/82">https://github.com/qwat/qwat-data-model/issues/82</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="print.html" class="btn btn-neutral float-left" title="3.6. Tisk v QWAT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="history.html" class="btn btn-neutral float-right" title="3.8. Prohlížeč historie" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018, QWAT team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

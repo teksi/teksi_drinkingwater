@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="cs" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7. Ukázková data a projekt &mdash; Dokumentace pro QWAT 1.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="8. Časté otázky" href="../faq/index.html" />
+    <link rel="prev" title="6.4. Upgrade databáze" href="../developer-guide/upgrade.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            QWAT
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../features-guide/index.html">1. QWAT / TEKSI modul pitné vody</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-guide/index.html">2. Instalační příručka QWAT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">3. Uživatelská příručka QWAT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/index.html">4. Průvodce správce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guide/index.html">5. Příručka přispěvatele</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guide/index.html">6. Příručka pro vývojáře</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Ukázková data a projekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">8. Časté otázky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/index.html">9. Slovník</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../translation/index.html">10. Překlad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QWAT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">7. </span>Ukázková data a projekt</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/demo-guide/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="demo-data-and-project">
+<h1><span class="section-number">7. </span>Ukázková data a projekt<a class="headerlink" href="#demo-data-and-project" title="Permalink to this heading"></a></h1>
+<p>QWAT lze testovat stažením úložiště projektu QGS <a class="reference external" href="https://github.com/qwat/QWAT">zde</a> a obnovením nejnovějšího <a class="reference external" href="https://github.com/qwat/qwat-data-model/releases/latest">data_and_structure_sample.backup</a> v PostgreSQL (+ rozšíření PostGIS a hstore).</p>
+<p>Na stránce stahování najdete tyto zálohy:</p>
+<ul class="simple">
+<li><p><cite>qwat_vX.X.X_data_and_structure_sample.backup</cite>: Obnovení schématu QWAT plus ukázkový dataset</p></li>
+<li><p><cite>qwat_vX.X.X_structure_only.backup</cite>: Obnoví pouze schéma QWAT. Kromě toho budete také muset obnovit dump value_list_data_only</p></li>
+<li><p><cite>qwat_vX.X.X_value_list_data_only.backup</cite>: Obnovení seznamu hodnot demo projektu QWAT</p></li>
+<li><p><cite>qwat_vX.X.X_data_only_sample.backup</cite>: Obnovení vzorového datového souboru (skript init_qwat.sh by měl být spuštěn před obnovením vzorového datového souboru)</p></li>
+</ul>
+<p>Podrobnější pokyny:</p>
+<p>Jak nainstalovat vzorek dat z projektu QWAT Water Distribution Management.</p>
+<p>Vytvořte databázový model QWAT pomocí rolí a obnovte nejnovější verzi:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the database and the extensions</span>
+<span class="n">psql</span> <span class="o">-</span><span class="n">U</span> <span class="n">postgres</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;create database qwat;&#39;</span>
+<span class="n">psql</span> <span class="o">-</span><span class="n">U</span> <span class="n">postgres</span> <span class="o">-</span><span class="n">d</span> <span class="n">qwat</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;create extension postgis;&#39;</span>
+<span class="n">psql</span> <span class="o">-</span><span class="n">U</span> <span class="n">postgres</span> <span class="o">-</span><span class="n">d</span> <span class="n">qwat</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;create extension hstore;&#39;</span>
+
+<span class="c1"># Create the roles for QWAT</span>
+<span class="n">psql</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;CREATE ROLE qwat_viewer NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;&#39;</span> <span class="o">-</span><span class="n">U</span> <span class="n">postgres</span>
+<span class="n">psql</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;CREATE ROLE qwat_user NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;&#39;</span> <span class="o">-</span><span class="n">U</span> <span class="n">postgres</span>
+<span class="n">psql</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;CREATE ROLE qwat_manager NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;&#39;</span> <span class="o">-</span><span class="n">U</span> <span class="n">postgres</span>
+<span class="n">psql</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;CREATE ROLE qwat_sysadmin NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;&#39;</span> <span class="o">-</span><span class="n">U</span> <span class="n">postgres</span>
+
+<span class="c1"># And restore it into your QWAT database</span>
+<span class="n">pg_restore</span> <span class="o">-</span><span class="n">U</span> <span class="n">postgres</span> <span class="o">--</span><span class="n">dbname</span> <span class="n">qwat</span> <span class="o">-</span><span class="n">e</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">owner</span> <span class="o">--</span><span class="n">verbose</span> <span class="o">--</span><span class="n">jobs</span><span class="o">=</span><span class="mi">3</span> <span class="o">--</span><span class="n">disable</span><span class="o">-</span><span class="n">triggers</span> <span class="o">--</span><span class="n">port</span> <span class="mi">5432</span> <span class="n">qwat_dump</span><span class="o">.</span><span class="n">backup</span>
+</pre></div>
+</div>
+<p>Nyní máte nejnovější datový model (s ukázkovými daty) + databázové role.</p>
+<p><strong>Vytvořte službu QWAT v souboru .pg_service.conf</strong></p>
+<p>Pokud již máte službu definovanou, můžete tento krok přeskočit, jinak upravte soubor <code class="docutils literal notranslate"><span class="pre">.pg_service.conf</span></code> a nechte jej vypadat takto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">qwat</span><span class="p">]</span>
+<span class="c1">#enter your database ip</span>
+<span class="n">host</span><span class="o">=</span><span class="mf">127.0.0.1</span>
+<span class="c1">#database name</span>
+<span class="n">dbname</span><span class="o">=</span><span class="n">qwat</span>
+<span class="n">port</span><span class="o">=</span><span class="mi">5432</span>
+<span class="n">user</span><span class="o">=</span><span class="n">postgres</span>
+<span class="c1">#you can also add your password if you like</span>
+<span class="n">password</span><span class="o">=</span><span class="n">YourPassword</span>
+
+<span class="p">[</span><span class="n">qwat_prod</span><span class="p">]</span>
+<span class="c1">#enter your database ip</span>
+<span class="n">host</span><span class="o">=</span><span class="mf">127.0.0.1</span>
+<span class="c1">#database name</span>
+<span class="n">dbname</span><span class="o">=</span><span class="n">qwat</span>
+<span class="n">port</span><span class="o">=</span><span class="mi">5432</span>
+<span class="n">user</span><span class="o">=</span><span class="n">postgres</span>
+<span class="c1">#you can also add your password if you like</span>
+<span class="n">password</span><span class="o">=</span><span class="n">YourPassword</span>
+</pre></div>
+</div>
+<p><strong>Otevřete projekt qgis</strong></p>
+<p>Projekt <strong>qwat.qgs</strong> můžete otevřít z adresáře qwat-data-sample a měla by se zobrazit tato obrazovka:</p>
+<img alt="../_images/qgis.png" src="../_images/qgis.png" />
+<div class="admonition note">
+<p class="admonition-title">Poznámka</p>
+<p>Můžete také vyzkoušet nejnovější projekt <strong>qwat.qgs</strong> z adresáře QWAT. Mějte na paměti, že existuje šance, že se nehodí do vzorového datového modelu. Důvodem je, že vzorový datový model může být o něco starší než nejnovější datový model a odpovídá pouze odpovídajícímu projektu <strong>.qgs</strong>.</p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../developer-guide/upgrade.html" class="btn btn-neutral float-left" title="6.4. Upgrade databáze" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../faq/index.html" class="btn btn-neutral float-right" title="8. Časté otázky" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018, QWAT team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

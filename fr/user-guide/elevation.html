@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3.7. Altitude &mdash; Documentation QWAT 1.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="3.8. History viewer" href="history.html" />
+    <link rel="prev" title="3.6. Impression dans QWAT" href="print.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            QWAT
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../features-guide/index.html">1. QWAT / Module TEKSI eau potable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-guide/index.html">2. Guide d’installation QWAT</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">3. QWAT Guide de l’utilisateur</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="qwat_struct.html">3.1. Structuration du réseau d’Eau Potable sur QWAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create.html">3.2. Création d’objets dans QWAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update.html">3.3. Règles de base pour la mise à jour sur QWAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="delete.html">3.4. Suppression d’objets dans QWAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="link.html">3.5. Liaisons des différents objets dans QWAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="print.html">3.6. Impression dans QWAT</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.7. Altitude</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#principles">3.7.1. Principes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#behaviours">3.7.2. Comportement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#needed-tools">3.7.3. Outils nécessaires</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#open-issues">3.7.4. Open Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">3.7.5. Références</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="history.html">3.8. History viewer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/index.html">4. Guide Administrateur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guide/index.html">5. Guide du contributeur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guide/index.html">6. Guide du développeur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo-guide/index.html">7. Projet démo et données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">8. FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/index.html">9. Glossaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../translation/index.html">10. Traduction</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QWAT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">3. </span>QWAT Guide de l’utilisateur</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3.7. </span>Altitude</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/user-guide/elevation.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="elevation">
+<h1><span class="section-number">3.7. </span>Altitude<a class="headerlink" href="#elevation" title="Lien permanent vers cette rubrique"></a></h1>
+<p>La gestion de l’altitude dans un réseau de distribution est importante et doit être traitée de manière prudente. Il est nécessaire de suivre des conventions et principes pour assurer de conserver la précision, la source de mesure. Il faut fournir une manière simple de gérer les informations d’altitude.</p>
+<p>Cette page détaille la manière dont est gérée l’altitude dans QWAT.</p>
+<section id="principles">
+<h2><span class="section-number">3.7.1. </span>Principes<a class="headerlink" href="#principles" title="Lien permanent vers cette rubrique"></a></h2>
+<ul>
+<li><p>La valeur d’altitue est enregistrée dans les noeuds (nodes) et les points levés (survey points). Elle peut être fixée manuellement ou lors du levé.</p></li>
+<li><p>La géométrie 3D des conduites et automatiquement recalculée et les valeurs Z des vertices ne doit pas être fixée manuellement. La géométrie 3D est recalculée depuis les noeuds et les points levés en interpolant les altitudes.</p></li>
+<li><p>Les tables des noeuds et des points levés contiennent des informations sur la précision et la source de mesure (GPS, interpolation, MNT, etc.). Les attributs suivants sont disponibles:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>precision_plani : précision planimétrique</p></li>
+<li><p>precision_alt : précision altimétrique</p></li>
+<li><p>zsource : source de mesure</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Un point levé ne correspond pas nécessairement à un noeud. Si il correspond spatialement à un vertice, sa valeur Z va être utilisée pour interpoler la géométrie 3D de la conduite.</p></li>
+<li><p>Tous les lieux dont l’altitude est mesurée possède un point levé ou un noeud correspondant.</p></li>
+<li><p>La géométrie 3D complète des conduites est toujours recalculée.</p></li>
+<li><p>L’altitude par déaut est 0.0 car les géométrie 3D dans PostGIS ne supportent pas les valeurs NULL. Si le réseau est réelement à l’altitude 0, les altitudes 0.0 ne doivent pas être fixées manuellement. Il faut plutôt utiliser les valeurs mesurées sur le terrain qui elles ne seront pas exactement égales à 0 (pour ne pas perturber les routines automatiques).</p></li>
+</ul>
+</section>
+<section id="behaviours">
+<h2><span class="section-number">3.7.2. </span>Comportement<a class="headerlink" href="#behaviours" title="Lien permanent vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>Si un élément du réseau (vanne, partie, hydrant) est déplacé, la géométrie de la conduite attachée est recalculée avec les valeurs 3D.</p></li>
+<li><p>Toutes modifications de la géométrie d’une conduite engendre un calcul de sa géométrie 3D avec des altitudes interpolées.</p></li>
+<li><p>Si un nouveau vertice d’une conduite est créé ou déplacé, son altitude est mise à zéro temporairement et directement recalculée.</p></li>
+<li><p>Si on veut ajouter un vertice à une conduite et que son altitude n’est pas connue, il faut créer un noeud, utiliser l’outil pour calculer les valeurs interpolées de ce noeud et connecter la conduite.</p></li>
+</ul>
+</section>
+<section id="needed-tools">
+<h2><span class="section-number">3.7.3. </span>Outils nécessaires<a class="headerlink" href="#needed-tools" title="Lien permanent vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>Un outil pour calculer l’altitude interpolé d’un objet du réseau (vanne, hydrant, …). Il utilise les N noeuds et points levés les plus proches pour interpoler l’altitude. N peut être choisi dans l’interface QGIS.</p></li>
+<li><p>Un outils pour calculer l’altitude interpolée d’une élément du réseau en cliquant sur une conduite.</p></li>
+<li><p>Un outils pour calculer les altitudes interpolées pour une sélection d’objets (par exemples des points de constructions par lesquels passe une conduite) selon un set de points de référence (par exemple 3 points levés).</p></li>
+<li><p>Un outils pour créer un noeud ou un point levé à un vertice spécifique d’une conduite. Il demande à l’utilisateur l’altitude et la précision, avec la valeur par défaut qui est l’altitude interpolée.</p></li>
+</ul>
+</section>
+<section id="open-issues">
+<h2><span class="section-number">3.7.4. </span>Open Issues<a class="headerlink" href="#open-issues" title="Lien permanent vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>Comment calculer la précision d’une conduite selon la précision des noeuds? Comment enregistrer cette information?</p></li>
+<li><p>Lorsque les altitudes des conduites sont interpolée, y a-t-il des paramètres à fixer (Par exemple la distance autours de la conduite)?</p></li>
+</ul>
+</section>
+<section id="references">
+<h2><span class="section-number">3.7.5. </span>Références<a class="headerlink" href="#references" title="Lien permanent vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/qwat/QWAT/issues/93">https://github.com/qwat/QWAT/issues/93</a></p></li>
+<li><p><a class="reference external" href="https://github.com/qwat/qwat-data-model/issues/82">https://github.com/qwat/qwat-data-model/issues/82</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="print.html" class="btn btn-neutral float-left" title="3.6. Impression dans QWAT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="history.html" class="btn btn-neutral float-right" title="3.8. History viewer" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018, QWAT team.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

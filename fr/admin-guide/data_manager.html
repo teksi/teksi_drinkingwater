@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.1. Gestionnaire de données &mdash; Documentation QWAT 1.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="4.2. Triggers" href="triggers.html" />
+    <link rel="prev" title="4. Guide Administrateur" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            QWAT
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../features-guide/index.html">1. QWAT / Module TEKSI eau potable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-guide/index.html">2. Guide d’installation QWAT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">3. QWAT Guide de l’utilisateur</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">4. Guide Administrateur</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1. Gestionnaire de données</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#import-data-to-qwat">4.1.1. Importer des données dans QWAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import-data-from-topobase">4.1.2. Importer les données depuis Topobase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#export-data-to-interlis-sia-405-format">4.1.3. Exporter les données au format INTERLIS SIA 405</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#usage">4.1.3.1. Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#limitations">4.1.3.2. Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#export-data-to-sire">4.1.4. Export des données vers SIRE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backup-data">4.1.5. Sauvegarder les données</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restoring-data">4.1.6. Restaurer les données</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#qwat-analysis-tools">4.1.7. Outils d’analyse QWAT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="triggers.html">4.2. Triggers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guide/index.html">5. Guide du contributeur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guide/index.html">6. Guide du développeur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo-guide/index.html">7. Projet démo et données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">8. FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/index.html">9. Glossaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../translation/index.html">10. Traduction</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QWAT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">4. </span>Guide Administrateur</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.1. </span>Gestionnaire de données</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/admin-guide/data_manager.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="data-manager">
+<h1><span class="section-number">4.1. </span>Gestionnaire de données<a class="headerlink" href="#data-manager" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="import-data-to-qwat">
+<h2><span class="section-number">4.1.1. </span>Importer des données dans QWAT<a class="headerlink" href="#import-data-to-qwat" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Il est généralement préférable de charger les données directement à travers les vues plutôt que dans les tables, étant donné la complexité du modèle objet et de l’intelligence stockée dans les déclencheurs d’édition. (p. ex. gestion des noeuds et de la topologie).</p>
+<p>Une [belle alternative technique](<a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:nliaudat/qwat-import-sample.git) est proposée par Nicolas Liaudat, en utilisant directement QGIS et ses expressions pour charger les jeux de données. Merci de contribuer si vous trouvez des améliorations ou des erreurs.</p>
+</section>
+<section id="import-data-from-topobase">
+<h2><span class="section-number">4.1.2. </span>Importer les données depuis Topobase<a class="headerlink" href="#import-data-from-topobase" title="Lien permanent vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>Décrire le processus et les outils</p></li>
+<li><p>Décrire les checks automatiques et manuels à faire</p></li>
+<li><p>Mentionner les points spécifiques à prendre en compte</p></li>
+</ul>
+</section>
+<section id="export-data-to-interlis-sia-405-format">
+<h2><span class="section-number">4.1.3. </span>Exporter les données au format INTERLIS SIA 405<a class="headerlink" href="#export-data-to-interlis-sia-405-format" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Exporter une base de données QWAT au format d’échange INTERLIS (.xtf) est possible en utilisant l’outil dédié <a class="reference external" href="https://github.com/QGEP/qgepqwat2ili">qgepqwat2ili</a> développé comme partie d’un projet NGDI.</p>
+<section id="usage">
+<h3><span class="section-number">4.1.3.1. </span>Usage<a class="headerlink" href="#usage" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Qgepqwat2ili requiert Java (JRE 1.6 ou ultérieur) et python (3.6 ou ultérieur).</p>
+<p>Ensuite, il peut être installé comme n’importe quelle autre librairie python :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">qgepqwat2ili</span>
+</pre></div>
+</div>
+<p>Un export simple est effectué de cette manière (en assumant que vous avez défini un pgservice nommé <cite>qwat</cite>) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">qgepqwat2ili</span> <span class="n">qwat</span> <span class="n">export</span> <span class="n">desktop</span><span class="o">/</span><span class="n">my_export</span><span class="o">.</span><span class="n">xtf</span>
+</pre></div>
+</div>
+<p>Usage complet :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">qgepqwat2ili</span> <span class="n">qwat</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">recreate_schema</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">skip_validation</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">pgservice</span> <span class="n">PGSERVICE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">log</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">include_hydraulics</span><span class="p">]</span> <span class="n">export</span> <span class="n">path</span>
+
+<span class="n">positional</span> <span class="n">arguments</span><span class="p">:</span>
+<span class="p">{</span><span class="n">import</span><span class="p">,</span><span class="n">export</span><span class="p">}</span>       <span class="kn">import</span> <span class="nn">is</span> <span class="n">currently</span> <span class="ow">not</span> <span class="n">supported</span>
+<span class="n">path</span>                  <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">input</span><span class="o">/</span><span class="n">output</span> <span class="o">.</span><span class="n">xtf</span> <span class="n">file</span>
+
+<span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
+<span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+<span class="o">--</span><span class="n">recreate_schema</span>     <span class="n">drops</span> <span class="n">schema</span> <span class="ow">and</span> <span class="n">reruns</span> <span class="n">ili2pg</span> <span class="n">importschema</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+<span class="o">--</span><span class="n">skip_validation</span>     <span class="n">skips</span> <span class="n">running</span> <span class="n">ilivalidator</span> <span class="n">on</span> <span class="nb">input</span><span class="o">/</span><span class="n">output</span> <span class="n">xtf</span> <span class="p">(</span><span class="n">required</span> <span class="n">to</span> <span class="kn">import</span> <span class="nn">invalid</span> <span class="n">files</span><span class="p">,</span> <span class="n">invalid</span> <span class="n">outputs</span> <span class="n">are</span> <span class="n">still</span> <span class="n">generated</span><span class="p">)</span>
+                        <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+<span class="o">--</span><span class="n">include_hydraulics</span>  <span class="k">if</span> <span class="n">provided</span><span class="p">,</span> <span class="n">exports</span> <span class="n">will</span> <span class="n">include</span> <span class="n">hydraulischer_strang</span> <span class="ow">and</span> <span class="n">hydraulischer_node</span> <span class="n">classes</span> <span class="p">(</span><span class="n">these</span> <span class="n">are</span> <span class="n">currently</span> <span class="n">likely</span> <span class="n">to</span> <span class="n">make</span> <span class="n">the</span> <span class="n">export</span> <span class="n">invalid</span> <span class="n">due</span> <span class="n">to</span> <span class="n">issues</span> <span class="k">with</span> <span class="n">the</span> <span class="n">current</span> <span class="n">ili</span> <span class="n">model</span><span class="p">)</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+<span class="o">--</span><span class="n">pgservice</span> <span class="n">PGSERVICE</span>
+                        <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">pgservice</span> <span class="n">to</span> <span class="n">use</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span> <span class="n">the</span> <span class="n">database</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">qwat</span><span class="p">)</span>
+<span class="o">--</span><span class="n">log</span>                 <span class="n">saves</span> <span class="n">a</span> <span class="n">log</span> <span class="n">file</span> <span class="nb">next</span> <span class="n">to</span> <span class="n">the</span> <span class="nb">input</span><span class="o">/</span><span class="n">output</span> <span class="n">file</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Une documentation plus complète ainsi qu’un suivi des erreurs peut être trouvé sur le <a class="reference external" href="https://github.com/QGEP/qgepqwat2ili">répertoire gepqwat2ili</a>.</p>
+</section>
+<section id="limitations">
+<h3><span class="section-number">4.1.3.2. </span>Limitations<a class="headerlink" href="#limitations" title="Lien permanent vers cette rubrique"></a></h3>
+<p>L’outil est actuellement expérimental. Prêtez attention aux limitations suivantes :</p>
+<ul class="simple">
+<li><p>L’outil n’a jusqu’ici peu été testé avec des données réelles.</p></li>
+<li><p>Le modèle de données QWAT et le modèle de données SIA 405 ont des différences importantes. De ce fait, toutes les classes ou propriétés ne peuvent être toujours être déterminées précisément.</p></li>
+<li><p>Par défaut, l’outil n’exporte pas les classes hydrauliques. Pour ce faire, une option doit être explicitement ajoutée. Ceci conduit à la production d’exports invalides de par les différences mentionnées ci-dessus.</p></li>
+<li><p>L’outil est actuellement uniquement disponible comme outil en ligne de commande. Il sera probablement intégré à un plugin QWAT, de manière similaire à ce qui a été fait pour QGEP.</p></li>
+<li><p>L’outil ne supporte aujourd’hui que l’export. Le support de l’import est envisagé, mais cela requiert de grands changements à apporter au modèle QWAT pour le rapprocher de la norme SIA405.</p></li>
+</ul>
+<p>Faites attention à contrôler consciencieusement les données exportées avant de diffuser vos fichiers. Merci de reporter toute erreur ou inconsistance que vous rencontreriez sur le <a href="#id1"><span class="problematic" id="id2">`suivi d'erreurs qgepqwat2ili&lt;https://github.com/QGEP/qgepqwat2ili/issues&gt;`_</span></a> pour aider à améliorer l’outil.</p>
+</section>
+</section>
+<section id="export-data-to-sire">
+<h2><span class="section-number">4.1.4. </span>Export des données vers SIRE<a class="headerlink" href="#export-data-to-sire" title="Lien permanent vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>Décrire le processus et les outils</p></li>
+<li><p>Décrire les checks automatiques et manuels à faire</p></li>
+<li><p>Mentionner les points spécifiques à prendre en compte</p></li>
+</ul>
+</section>
+<section id="backup-data">
+<h2><span class="section-number">4.1.5. </span>Sauvegarder les données<a class="headerlink" href="#backup-data" title="Lien permanent vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>Utiliser une sauvegarde de données PostgreSQL</p></li>
+<li><p>A noter (version de PG ….)</p></li>
+</ul>
+</section>
+<section id="restoring-data">
+<h2><span class="section-number">4.1.6. </span>Restaurer les données<a class="headerlink" href="#restoring-data" title="Lien permanent vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>Utiliser une sauvegarde de données PostgreSQL</p></li>
+<li><p>Points à noter</p></li>
+</ul>
+</section>
+<section id="qwat-analysis-tools">
+<h2><span class="section-number">4.1.7. </span>Outils d’analyse QWAT<a class="headerlink" href="#qwat-analysis-tools" title="Lien permanent vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p>Ou trouver des scripts d’analyse de données</p></li>
+<li><p>Comment utiliser les scripts</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="index.html" class="btn btn-neutral float-left" title="4. Guide Administrateur" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="triggers.html" class="btn btn-neutral float-right" title="4.2. Triggers" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018, QWAT team.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

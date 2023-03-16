@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="cs" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6.4. Upgrade databáze &mdash; Dokumentace pro QWAT 1.0</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Rejstřík" href="../genindex.html" />
+    <link rel="search" title="Vyhledávání" href="../search.html" />
+    <link rel="next" title="7. Ukázková data a projekt" href="../demo-guide/index.html" />
+    <link rel="prev" title="6.2. Přizpůsobte místní modely DB" href="local_customizations.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            QWAT
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../features-guide/index.html">1. QWAT / TEKSI modul pitné vody</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation-guide/index.html">2. Instalační příručka QWAT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">3. Uživatelská příručka QWAT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin-guide/index.html">4. Průvodce správce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guide/index.html">5. Příručka přispěvatele</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">6. Příručka pro vývojáře</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="qwat_dev.html">6.1. Přehled vývoje QWAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local_customizations.html">6.2. Přizpůsobte místní modely DB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local_customizations.html#create-an-extension">6.3. Vytvořte rozšíření</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.4. Upgrade databáze</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-new-upgrade-delta">6.4.1. Vytvořte novou delta aktualizaci</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#migrate-an-existing-database">6.4.2. Migrujte existující databázi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-way-it-works">6.4.3. Jak to funguje</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../demo-guide/index.html">7. Ukázková data a projekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">8. Časté otázky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/index.html">9. Slovník</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../translation/index.html">10. Překlad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QWAT</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">6. </span>Příručka pro vývojáře</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6.4. </span>Upgrade databáze</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/developer-guide/upgrade.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="upgrade-database">
+<h1><span class="section-number">6.4. </span>Upgrade databáze<a class="headerlink" href="#upgrade-database" title="Permalink to this heading"></a></h1>
+<section id="create-a-new-upgrade-delta">
+<h2><span class="section-number">6.4.1. </span>Vytvořte novou delta aktualizaci<a class="headerlink" href="#create-a-new-upgrade-delta" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Nejprve vytvořte novou větev pro vaši modifikaci na modelu</p></li>
+<li><p>Upravte kód vytváření SQL jak se vám nejlépe hodí</p></li>
+<li><p>Vytvořte odpovídající soubor SQL delta v <em>data-model/update/delta</em>. * soubor musí být pojmenován: delta_{tag_number}_{increment}_{short description}.sql ` viz Cykly a verzování. &lt;qwat_dev.html # release-cycle-and-versioning&gt; <a href="#id1"><span class="problematic" id="id2">`</span></a>_</p></li>
+<li><p>Odešlete vaší Branch a zkontrolujte výsledek travis</p></li>
+<li><p>Pokud je test travis v pořádku, můžete vytvořit požadavek vyžádání a sloučit vaše změny do předlohy</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Poznámka</p>
+<p>Datový model by měl být TAGOVÁN. Značka by měla respektovat následující syntaxi, jako je tato: x.x.x. U každé hlavní verze se značka MUSÍ nazývat x.0.0.</p>
+</div>
+</section>
+<section id="migrate-an-existing-database">
+<h2><span class="section-number">6.4.2. </span>Migrujte existující databázi<a class="headerlink" href="#migrate-an-existing-database" title="Permalink to this heading"></a></h2>
+<p>Pokud používáte starou verzi modelu QWAT, můžete jej upgradovat podle následujících pokynů:</p>
+<div class="admonition warning">
+<p class="admonition-title">Varování</p>
+<p>Před upgradem byste měli vždy uložit aktuální databázi</p>
+</div>
+<ul class="simple">
+<li><p>Otevřete terminál a přejděte na <em>qwat_project/data-model/update</em></p></li>
+<li><dl class="simple">
+<dt>Spusťte příkaz pro upgrade: <code class="docutils literal notranslate"><span class="pre">./upgrade_db.sh</span></code></dt><dd><ul>
+<li><p>Tím se otestuje proces migrace</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Pokud je proces migrace v pořádku, spusťte znovu příkaz s parametrem pro aktualizaci skutečné DB: <code class="docutils literal notranslate"><span class="pre">./upgrade_db.sh</span> <span class="pre">--upgrade</span> <span class="pre">yes</span></code></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Poznámka</p>
+<p>Váš <em>.pg_service.conf</em> musí obsahovat připojení k qwat, qwat_test a qwat_conform DB</p>
+</div>
+</section>
+<section id="the-way-it-works">
+<h2><span class="section-number">6.4.3. </span>Jak to funguje<a class="headerlink" href="#the-way-it-works" title="Permalink to this heading"></a></h2>
+<p>Máme značku pro verzi x.0</p>
+<p>V adresáři <em>/update/delta/</em> najdete  seznam souborů SQL, které obsahují aktuální vývoj (delta). Pokud spustíme <em>init_qwat.sh</em> v aktuálním úložišti git, měli bychom mít stejnou DB, než kdybychom prováděli <em>init_qwat.sh</em> verze x.0. Přispěvatel, který přidá nový soubor delta SQL, musí také aktualizovat skript SQL pro vytváření databáze SQL.</p>
+<p>Pro uživatele proces migrace spočívá v:</p>
+<ul class="simple">
+<li><p>Získejte verzi jeho základu (měl by být uveden v QWAT systémovém schématu).</p></li>
+<li><dl class="simple">
+<dt>Spusťte migrační skript, který v parametru vezme číslo verze. Skript provádí následující úkoly:</dt><dd><ul>
+<li><p>pg_dump QWAT DB</p></li>
+<li><p>pg_restore předchozího výpisu v testovací DB (* qwat_test <a href="#id1"><span class="problematic" id="id2">*</span></a>)</p></li>
+<li><p>Proveďte v testu DB veškerou delta SQL vyšší nebo rovnou číslu verze (sql delta musí být pojmenováno <em>delta_{tag_number}_{increment}_{short description}.sql</em>)</p></li>
+<li><dl class="simple">
+<dt>Spusťte skript pro testování shody:</dt><dd><ul>
+<li><p>Vytvořte novou DB: <em>qwat_test_conform</em></p></li>
+<li><p>Vytvořte referenční soubor (výsledek z testovacího sql DB)</p></li>
+<li><p>Porovnání tohoto referenčního souboru se souborem vytvořeným dříve vytvořenou <em>qwat_test</em>  DB</p></li>
+<li><p>Pokud je vše v pořádku, je uživatel vyzván k zahájení migrace na jeho skutečné databázi</p></li>
+<li><p>Pokud dojde k chybám, musí je uživatel sám odladit, nebo kontaktovat tým QWAT</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="local_customizations.html" class="btn btn-neutral float-left" title="6.2. Přizpůsobte místní modely DB" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../demo-guide/index.html" class="btn btn-neutral float-right" title="7. Ukázková data a projekt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018, QWAT team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
