@@ -1,0 +1,12 @@
+build
+compile_messages
+init
+*~
+*.mo
+*.swp
+*.bak
+i18n
+locale
+.vscode
+Pipfile
+Pipfile.lock
