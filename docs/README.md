@@ -3,11 +3,18 @@
 ## Installation
 
 ### Installing with a script (Linux/Mac)
-You can install the Transifex CLI by executing:
+You can install the latest Transifex CLI by executing:
 
 ```
 curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
 ```
+
+Or you can isntall a specific version if you need by executing:
+
+```
+curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash -s -- yourVersion
+```
+
 
 This script will:
 * Try to find the correct version for your system.
@@ -17,6 +24,7 @@ This script will:
 **Note:** You need to restart your terminal for the `PATH` changes to be applied.
 
 ### Download from Github Releases (Linux/Mac/Windows)
+
 Another way to install the Transifex CLI is to download
 the latest version of the binary from GitHub
 [here](https://github.com/transifex/cli/releases).
@@ -33,6 +41,7 @@ Clone the [repository](https://github.com/transifex/cli) and go into the directo
 cd /path/to/transifex/cli
 ```
 ### Building from source
+
 The default way to build the binary is
 
   ```shell
@@ -49,6 +58,24 @@ the following command:
   ```
 
 This will build the binary and it will copy it at `./bin/` in the repository.
+
+### Running from Docker (beta)
+
+You can skip the installation and run the Transifex client from Docker if it is
+available in your system. All you have to do is put this line:
+
+```sh
+alias tx='touch ~/.transifexrc; docker run --rm -i -t -v `pwd`:/app -v ~/.transifexrc:/.transifexrc -v /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt transifex/txcli --root-config /.transifexrc'
+```
+
+to your `~/.bashrc` / `~/.zshrc`. (The first time you use it you will have to
+wait for a ~5MB download)
+
+
+### Running from Github actions (beta)
+
+You can invoke the CLI from within a Github workflow by using our Github
+action. See the instructions [here](https://github.com/transifex/cli-action).
 
 ## Migrating from older versions of the client
 
@@ -165,6 +192,15 @@ as a _Transifex project_. Your directory structure should now look like this:
     |
     + en.php
 ```
+### Using Environment Variables
+The available environment variables for the CLI:
+
+* `TX_TOKEN`: The api token to use
+* `TX_HOSTNAME`: The API hostname
+* `TX_CACERT`: Path to CA certificate bundle file
+
+You can either add these variables in your CI settings, your profile file or when executing the commands like:
+`TX_TOKEN=myapitoken tx pull`
 
 ### Adding Resources to Configuration
 
@@ -219,6 +255,7 @@ host = https://www.transifex.com
 source_file = locale/en.php
 file_filter = locale/<lang>.php
 type = PHP
+resource_name = Web Application
 ```
 
 You can skip steps from the interactive session by adding flags to the `tx add`
@@ -232,12 +269,13 @@ all the flags:
     --organization=organization-1 \
     --project=project-1 \
     --resource=en_php \
+    --resource-name='Web Application' \
     locale/en.php
 ```
 
 #### Adding resources in bulk
 
-> With the old client I could add multiple resource at the same time with `tx
+> With the old client I could add multiple resources at the same time with `tx
 > config mapping-bulk`. What should I do now?
 
 We decided not to implement this functionality in the new client because its
@@ -329,18 +367,21 @@ file_filter = translations/myproject.resource1/<lang>.po
 source_file = translations/myproject.resource1/en.po
 type = PO
 minimum_perc = 0
+resource_name = Resource 1
 
 [o:myorganization:p:myproject:r:resource2]
 file_filter = translations/myproject.resource2/<lang>.json
 source_file = translations/myproject.resource2/en.json
 type = KEYVALUEJSON
 minimum_perc = 0
+resource_name = Resource 2
 
 [o:myorganization:p:myproject:r:resource3]
 file_filter = translations/myproject.resource3/<lang>.html
 source_file = translations/myproject.resource3/en.html
 type = HTML
 minimum_perc = 0
+resource_name = Resource 3
 ```
 
 The options for this command are:
@@ -351,7 +392,7 @@ The options for this command are:
 
   - `<project_slug>`
   - `<resource_slug>` _(required)_
-  - `<lang>` _(required)_
+  - `<lang>` _(required)_ - can be used multiple times in the filter path
   - `<ext>`
 
   The default value for this option is
@@ -394,6 +435,11 @@ A resource ID must refer to a resource that has already been configured with
 resource in Transifex is
 `https://www.transifex.com/myorganization/myproject/myresource`, then the
 resource ID will be `myproject.myresource`.
+
+You can also use the `*` character to select multiple resources with the same
+pattern. So, for instance, if you have the `abc.def` resource ID in your
+configuration, you can select it with either `abc.*`, `*.def`, `ab*ef` or even
+`a*.d*f`.
 
 > Note: for backwards compatibility with previous versions of the client, you
 > can also use the `-r/--resources` flag. You can also use both at the same
@@ -446,8 +492,7 @@ equivalent to using `-l` with all the _local_ language codes.
 
 Transifex uses the _ISO/IEC 15897_ standard for language codes (for example
 `en_US`). If you use a different format for the _local_ language codes, you can
-define a mapping in your configuration file `.tx/config` (later we will offer
-the `tx config` command to make editing the configuration more convenient). You
+define a mapping in your configuration file `.tx/config`. You
 can specify these mappings for all configured resources by adding them to the
 `[main]` section or you can specify mappings per resource. The "per-resource"
 mappings take precendence. Configuring a language mapping looks like this:
@@ -516,6 +561,17 @@ fall back to taking the filesystem timestamp into account.
   `https://www.transifex.com/myorganization/myproject/new_feature--myresource`
   resource.
 
+  > Note: Starting from version 1.5.0 resources created using the `--branch` flag,
+  will have an enhanced functionality in transifex and will be able to automatically
+  be merged into their bases. Resources created using the `--branch`  prior to this
+  version, need to be pushed again in order for the new functionality to be available.
+
+  ```sh
+  → tx push --branch 'new_feature' --base '' myproject.myresource
+  ```
+
+- `--base`: Define the base branch when pushing a branch.
+
 - `--skip`: Normally, if an upload fails, the client will abort. This may not
   be desirable if most uploads are expected to succeed. For example, the reason
   of the failed upload may be a syntax error in _one_ of the language files. If
@@ -525,6 +581,7 @@ fall back to taking the filesystem timestamp into account.
 - `--workers/-w` (default 5, max 30): The client will push files in parallel to improve
   speed. The `--workers` flag sets the number of concurrent uploads possible at
   any time.
+- `--silent`: Reduce verbosity of the output.
 
 ### Pulling Files from Transifex
 
@@ -551,6 +608,11 @@ You can limit the resources you want to pull with:
 
 As stated in the `tx push` section, a resource ID must refer to a resource that has
 already been configured with `tx add` and has the form `<project>.<resource>`.
+
+You can also use the `*` character to select multiple resources with the same
+pattern. So, for instance, if you have the `abc.def` resource ID in your
+configuration, you can select it with either `abc.*`, `*.def`, `ab*ef` or even
+`a*.d*f`.
 
 > Note: for backwards compatibility with previous versions of the client, you
 > can also use the `-r/--resources` flag. You can also use both at the same
@@ -703,12 +765,16 @@ default to taking the filesystem timestamp into account.
   you set the `--skip` flag and an upload fails, then the client will simply
   print a warning and move on to the next language file.
 
-- `--minimum_perc=MINIMUM_PERC` Specify the minimum translation completion
+- `--minimum-perc=MINIMUM_PERC` Specify the minimum translation completion
   threshold required in order for a file to be downloaded.
 
 - `--workers/-w` (default 5, max 30): The client will pull files in parallel to improve
   speed. The `--workers` flag sets the number of concurrent downloads possible at
   any time.
+
+- `--pseudo`: Generate mock string translations with a ~20% default length increase in characters.
+
+- `--silent`: Reduce verbosity of the output.
 
 ### Removing resources from Transifex
 The tx delete command lets you delete a resource that's in your `config` file and on Transifex.
@@ -745,7 +811,16 @@ tx delete project_slug.\*
   If you supply an empty string as the branch (`--branch ''`), then the client
   will attempt to figure out the currently active branch in the local git repository.
 
+### Merging Resource
+The tx merge command lets you merge a branch resource with its base resource (applies only to resources created with the `--branch` flag)
 
+To merge a resource to its base resource, use the following command:
+```
+tx merge --branch branch_name project_slug.resource_slug
+```
+**Other flags:**
+- `--conflict-resolution`: Set the conflict resolution strategy. Acceptable options are `USE_HEAD` (changes in the HEAD resource will be used) and `USE_BASE` (changes in the BASE resource will be used)
+- `--force`: In case you want to proceed with the merge even if the source strings are diverged, use the `-f/--force` flag.
 
 ### Getting the local status of the project
 The status command displays the existing configuration in a human readable format. It lists all resources that have been initialized under the local repo/directory and all their associated translation files:
