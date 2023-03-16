@@ -5,8 +5,8 @@ init
 *.mo
 *.swp
 *.bak
+tx
 i18n
 locale
-.vscode
 Pipfile
 Pipfile.lock
